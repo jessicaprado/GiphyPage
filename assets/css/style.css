@@ -1,0 +1,25 @@
+.topButtons {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.gifs {
+	position: relative;
+	float: left;
+}
+
+.searchbar {
+	position: relative;
+	float: left;
+}
+
+button {
+	margin-right: 5px;
+}
+
+.imageGif {
+	position: relative;
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
