@@ -10,7 +10,7 @@ $("#search").on("click", function(){
 	var addButton = $(".animal").val().trim();
 	animals.push(addButton);
 	renderButtons();	
-	return false;
+	
 	});
 
 
@@ -44,24 +44,25 @@ function findAnimalGifs(){
     	image = response.data[i].images.fixed_height_still.url;
     	animateImage = response.data[i].images.fixed_height.url;
     	var rating = response.data[i].rating; 	
-    	finalGif = $("<div class = imageGif> Rating: " + rating.toUpperCase() + "<br><img class=display data-alt='" + animateImage + "' src='" + image + "'></div>")
+    	finalGif = $("<div class = imageGif> Rating: " + rating.toUpperCase() + "<br><img class=display data-still=" + image + "data-gif='" + animateImage + "' src='" + image + "'></div>")
     	finalGif.prependTo(".gifs")
-    	finalGif.on("click", playGif)
+    	//finalGif.on("click", playGif)
 		}   
     	});
 	};//end of findAnimalGifs
 
-function playGif () {
-	var test = $(image).attr("src", animateImage);
-	console.log(test);
-};
+//attempt to make playable gifs
+/*function playGif () {
+	var play = $(this).attr("src", animateImage);
 
+	console.log(play)
+};
+*/
 $(document).on("click", "button", ".animal", findAnimalGifs);
 
 /*Bugs:
 
-2. Make sure that search and enter both work
 3. get gifs to play when clicked*/
-
+return false;
 //END OF SCRIPT
 });
